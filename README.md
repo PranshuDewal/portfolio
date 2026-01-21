@@ -34,7 +34,7 @@ portfolio/
 
 ## 🚀 Deployment
 
-This site is designed for GitHub Pages. Site live at `https://yourusername.github.io/portfolio`
+This site is designed for GitHub Pages. Site live at `https://PranshuDewal.github.io/portfolio`
 
 ## 📫 Contact
 
