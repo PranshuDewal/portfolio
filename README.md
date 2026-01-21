@@ -34,13 +34,7 @@ portfolio/
 
 ## 🚀 Deployment
 
-This site is designed for GitHub Pages:
-
-1. Create a new repository named `portfolio`
-2. Upload `index.html` to the repository
-3. Go to Settings → Pages
-4. Select "Deploy from a branch" → `main` → `/ (root)`
-5. Your site will be live at `https://yourusername.github.io/portfolio`
+This site is designed for GitHub Pages. Site live at `https://yourusername.github.io/portfolio`
 
 ## 📫 Contact
 
