@@ -1177,6 +1177,327 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Cookie Consent Banner */
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 1.5rem 2rem;
+            z-index: 10000;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            box-shadow: 0 -4px 30px rgba(0,0,0,0.3);
+        }
+
+        .cookie-consent.visible {
+            transform: translateY(0);
+        }
+
+        .cookie-consent-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .cookie-consent-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .cookie-consent-text {
+            flex: 1;
+        }
+
+        .cookie-consent-text h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cookie-consent-text p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .cookie-consent-text a {
+            color: var(--accent-cyan);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .cookie-consent-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-shrink: 0;
+            align-items: center;
+        }
+
+        .cookie-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .cookie-btn-accept {
+            background: var(--accent-gradient);
+            color: #000;
+        }
+
+        .cookie-btn-accept:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px -4px rgba(96,165,250,0.5);
+        }
+
+        .cookie-btn-decline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .cookie-btn-decline:hover {
+            background: var(--bg-tertiary);
+            border-color: var(--text-muted);
+        }
+
+        .cookie-btn-settings {
+            background: transparent;
+            color: var(--accent-cyan);
+            padding: 0.75rem 1rem;
+        }
+
+        .cookie-btn-settings:hover {
+            text-decoration: underline;
+        }
+
+        /* Privacy Modal */
+        .privacy-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 10001;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .privacy-modal-overlay.visible {
+            display: flex;
+        }
+
+        .privacy-modal {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .privacy-modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: var(--bg-secondary);
+            z-index: 1;
+        }
+
+        .privacy-modal-header h2 {
+            font-size: 1.5rem;
+        }
+
+        .privacy-modal-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            line-height: 1;
+        }
+
+        .privacy-modal-close:hover {
+            color: var(--text-primary);
+        }
+
+        .privacy-modal-body {
+            padding: 2rem;
+        }
+
+        .privacy-modal-body h3 {
+            font-size: 1.1rem;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--accent-cyan);
+        }
+
+        .privacy-modal-body h3:first-child {
+            margin-top: 0;
+        }
+
+        .privacy-modal-body p, .privacy-modal-body ul {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-modal-body ul {
+            padding-left: 1.5rem;
+        }
+
+        .privacy-modal-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        .privacy-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .privacy-toggle-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .privacy-toggle-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 26px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 26px;
+            transition: 0.3s;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background: var(--text-muted);
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .toggle-switch input:checked + .toggle-slider {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
+        .toggle-switch input:checked + .toggle-slider:before {
+            transform: translateX(24px);
+            background: white;
+        }
+
+        .toggle-switch input:disabled + .toggle-slider {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .privacy-modal-footer {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            position: sticky;
+            bottom: 0;
+            background: var(--bg-secondary);
+        }
+
+        /* Privacy Settings Link */
+        .privacy-settings-link {
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+        }
+
+        .privacy-settings-link:hover {
+            color: var(--accent-cyan);
+        }
+
+        @media (max-width: 768px) {
+            .cookie-consent {
+                padding: 1rem;
+            }
+
+            .cookie-consent-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cookie-consent-buttons {
+                flex-wrap: wrap;
+                width: 100%;
+            }
+
+            .cookie-btn-accept, .cookie-btn-decline {
+                flex: 1;
+                min-width: 120px;
+            }
+
+            .privacy-modal {
+                max-height: 90vh;
+            }
+
+            .privacy-modal-body {
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1184,6 +1505,124 @@
     <div class="bg-grid"></div>
     <div class="bg-glow bg-glow-1"></div>
     <div class="bg-glow bg-glow-2"></div>
+
+    <!-- Cookie Consent Banner (Quebec Law 25 Compliant) -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-consent-container">
+            <div class="cookie-consent-content">
+                <div class="cookie-consent-text">
+                    <h3>🍪 Your Privacy Matters</h3>
+                    <p>
+                        This website uses Google Analytics to understand how visitors interact with my portfolio.
+                        In compliance with Quebec's <strong>Law 25</strong> (Act respecting the protection of personal information),
+                        I require your explicit consent before collecting any data.
+                        <a onclick="openPrivacyModal()">Learn more about what data is collected</a>.
+                    </p>
+                </div>
+                <div class="cookie-consent-buttons">
+                    <button class="cookie-btn cookie-btn-settings" onclick="openPrivacyModal()">Privacy Settings</button>
+                    <button class="cookie-btn cookie-btn-decline" onclick="declineConsent()">Decline</button>
+                    <button class="cookie-btn cookie-btn-accept" onclick="acceptConsent()">Accept Analytics</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal (Quebec Law 25 Compliant) -->
+    <div class="privacy-modal-overlay" id="privacyModal">
+        <div class="privacy-modal">
+            <div class="privacy-modal-header">
+                <h2>Privacy & Cookie Settings</h2>
+                <button class="privacy-modal-close" onclick="closePrivacyModal()">&times;</button>
+            </div>
+            <div class="privacy-modal-body">
+                <h3>About This Notice</h3>
+                <p>
+                    This privacy notice is provided in compliance with Quebec's <strong>Law 25</strong>
+                    (Act to modernize legislative provisions as regards the protection of personal information).
+                    As a Quebec resident, I am committed to respecting your privacy rights and ensuring transparency
+                    about how your personal information may be collected when you visit this website.
+                </p>
+
+                <h3>Data Controller</h3>
+                <p>
+                    <strong>Pranshu Mohan Dewal</strong><br>
+                    Laval, Quebec, Canada<br>
+                    Email: <a href="mailto:pranshumd@gmail.com" style="color: var(--accent-cyan);">pranshumd@gmail.com</a>
+                </p>
+
+                <h3>What Information Is Collected</h3>
+                <p>If you consent to analytics, Google Analytics 4 may collect:</p>
+                <ul>
+                    <li><strong>Device information:</strong> Browser type, operating system, screen resolution</li>
+                    <li><strong>Usage data:</strong> Pages visited, time spent on pages, scroll depth</li>
+                    <li><strong>Approximate location:</strong> Country and city (based on IP address, which is anonymized)</li>
+                    <li><strong>Referral source:</strong> How you found this website</li>
+                    <li><strong>Session information:</strong> New vs. returning visitor status</li>
+                </ul>
+                <p>
+                    <strong>Important:</strong> IP addresses are anonymized, and no personally identifiable information
+                    (such as your name, email, or exact location) is collected without your explicit action
+                    (e.g., contacting me directly).
+                </p>
+
+                <h3>Purpose of Data Collection</h3>
+                <p>Analytics data is used solely to:</p>
+                <ul>
+                    <li>Understand which sections of my portfolio are most viewed</li>
+                    <li>Improve the website's content and user experience</li>
+                    <li>Identify technical issues or broken links</li>
+                </ul>
+
+                <h3>Your Rights Under Law 25</h3>
+                <p>You have the right to:</p>
+                <ul>
+                    <li><strong>Refuse consent:</strong> Analytics will not be enabled without your explicit permission</li>
+                    <li><strong>Withdraw consent:</strong> You can change your preferences at any time using the "Privacy Settings" link</li>
+                    <li><strong>Access your data:</strong> Request information about what data may have been collected</li>
+                    <li><strong>Request deletion:</strong> Ask for your data to be removed</li>
+                </ul>
+                <p>
+                    To exercise any of these rights, please contact me at
+                    <a href="mailto:pranshumd@gmail.com" style="color: var(--accent-cyan);">pranshumd@gmail.com</a>.
+                </p>
+
+                <h3>Data Retention & Third Parties</h3>
+                <p>
+                    Analytics data is processed by Google LLC under their
+                    <a href="https://policies.google.com/privacy" target="_blank" style="color: var(--accent-cyan);">Privacy Policy</a>.
+                    Data is retained for 14 months and may be transferred to servers outside Canada.
+                    I do not sell, share, or transfer your personal information to any other third parties.
+                </p>
+
+                <h3>Cookie Settings</h3>
+                <div class="privacy-toggle">
+                    <div class="privacy-toggle-info">
+                        <h4>Essential Cookies</h4>
+                        <p>Required for the website to function. Stores your consent preference only.</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked disabled>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="privacy-toggle">
+                    <div class="privacy-toggle-info">
+                        <h4>Analytics Cookies (Google Analytics)</h4>
+                        <p>Help me understand how visitors use this website to improve content.</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="analyticsToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="privacy-modal-footer">
+                <button class="cookie-btn cookie-btn-decline" onclick="declineConsent(); closePrivacyModal();">Decline All</button>
+                <button class="cookie-btn cookie-btn-accept" onclick="savePreferences()">Save Preferences</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Navigation -->
     <nav id="navbar">
@@ -1962,10 +2401,175 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Pranshu Mohan Dewal. Built with precision. <a href="https://github.com/PranshuDewal" target="_blank">GitHub</a></p>
+        <p>
+            © 2025 Pranshu Mohan Dewal. Built with precision.
+            <a href="https://github.com/PranshuDewal" target="_blank">GitHub</a>
+            <span class="privacy-settings-link" onclick="openPrivacyModal()">| Privacy Settings</span>
+        </p>
     </footer>
 
     <script>
+        // =====================================================
+        // COOKIE CONSENT & PRIVACY MANAGEMENT (Quebec Law 25)
+        // =====================================================
+
+        // IMPORTANT: Replace 'G-XXXXXXXXXX' with your actual Google Analytics 4 Measurement ID
+        const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+
+        // Consent storage key
+        const CONSENT_KEY = 'pmd_analytics_consent';
+
+        // Check if user has already made a consent choice
+        function getConsentStatus() {
+            return localStorage.getItem(CONSENT_KEY);
+        }
+
+        // Show cookie consent banner if no choice has been made
+        function initConsentBanner() {
+            const consent = getConsentStatus();
+            if (consent === null) {
+                // No choice made yet - show banner (privacy by default)
+                setTimeout(() => {
+                    document.getElementById('cookieConsent').classList.add('visible');
+                }, 1000);
+            } else if (consent === 'accepted') {
+                // User previously accepted - load analytics
+                loadGoogleAnalytics();
+            }
+            // If consent === 'declined', do nothing (no tracking)
+
+            // Update toggle state in modal
+            const toggle = document.getElementById('analyticsToggle');
+            if (toggle) {
+                toggle.checked = consent === 'accepted';
+            }
+        }
+
+        // Accept consent - enable analytics
+        function acceptConsent() {
+            localStorage.setItem(CONSENT_KEY, 'accepted');
+            document.getElementById('cookieConsent').classList.remove('visible');
+            loadGoogleAnalytics();
+
+            // Update toggle
+            const toggle = document.getElementById('analyticsToggle');
+            if (toggle) toggle.checked = true;
+        }
+
+        // Decline consent - no tracking
+        function declineConsent() {
+            localStorage.setItem(CONSENT_KEY, 'declined');
+            document.getElementById('cookieConsent').classList.remove('visible');
+
+            // Remove any existing GA cookies
+            removeGACookies();
+
+            // Update toggle
+            const toggle = document.getElementById('analyticsToggle');
+            if (toggle) toggle.checked = false;
+        }
+
+        // Save preferences from modal
+        function savePreferences() {
+            const toggle = document.getElementById('analyticsToggle');
+            if (toggle && toggle.checked) {
+                acceptConsent();
+            } else {
+                declineConsent();
+            }
+            closePrivacyModal();
+        }
+
+        // Open privacy modal
+        function openPrivacyModal() {
+            // Update toggle to reflect current state
+            const toggle = document.getElementById('analyticsToggle');
+            const consent = getConsentStatus();
+            if (toggle) {
+                toggle.checked = consent === 'accepted';
+            }
+            document.getElementById('privacyModal').classList.add('visible');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close privacy modal
+        function closePrivacyModal() {
+            document.getElementById('privacyModal').classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on overlay click
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('privacyModal');
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    closePrivacyModal();
+                }
+            });
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePrivacyModal();
+            }
+        });
+
+        // Remove Google Analytics cookies
+        function removeGACookies() {
+            const cookies = document.cookie.split(';');
+            const domain = window.location.hostname;
+
+            cookies.forEach(cookie => {
+                const name = cookie.split('=')[0].trim();
+                if (name.startsWith('_ga') || name.startsWith('_gid')) {
+                    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + domain;
+                    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + domain;
+                }
+            });
+        }
+
+        // Load Google Analytics 4 (only after consent)
+        function loadGoogleAnalytics() {
+            // Prevent loading if already loaded
+            if (window.gaLoaded) return;
+
+            // Don't load if using placeholder ID
+            if (GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
+                console.log('Google Analytics: Please replace GA_MEASUREMENT_ID with your actual ID');
+                return;
+            }
+
+            // Create and load the gtag.js script
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+            document.head.appendChild(script);
+
+            // Initialize gtag
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+
+            // Configure with privacy-focused settings
+            gtag('config', GA_MEASUREMENT_ID, {
+                'anonymize_ip': true,           // Anonymize IP addresses
+                'cookie_expires': 63072000,     // 2 years max (will be shorter with user settings)
+                'cookie_flags': 'SameSite=Strict;Secure'
+            });
+
+            window.gaLoaded = true;
+        }
+
+        // Initialize consent banner on page load
+        document.addEventListener('DOMContentLoaded', initConsentBanner);
+
+        // =====================================================
+        // EXISTING WEBSITE FUNCTIONALITY
+        // =====================================================
+
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
